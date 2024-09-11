@@ -1,9 +1,15 @@
 <?php
+// Mostrar errores para depuración
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once('../conf/conf.php');
 
-$opcion = isset($_POST['bandera']) ? $_POST['bandera'] : "";
+// Obtener la opción enviada
+$opcion = isset($_GET['bandera']) ? $_GET['bandera'] : "";
 $nombre_categoria = isset($_POST['nombre_categoria']) ? $_POST['nombre_categoria'] : "";
-$id_categoria = isset($_POST['id_categoria']) ? $_POST['id_categoria'] : "";
+$id_categoria = isset($_GET['id_categoria']) ? $_GET['id_categoria'] : "";
 
 
 // Insertar nueva categoría
@@ -13,7 +19,7 @@ if ($opcion == 5) {
         $ejecutar = mysqli_query($con, $consulta);
 
         if ($ejecutar) {
-            header('Location: index.php'); // Redirige a la lista de categorías o una página adecuada
+            header('Location: index.php'); // Redirige a la lista de categorías
         } else {
             echo "Error al insertar la categoría: " . mysqli_error($con);
         }
@@ -28,7 +34,7 @@ else if ($opcion == 6) {
         $ejecutar = mysqli_query($con, $consulta);
 
         if ($ejecutar) {
-            header('Location: index.php'); // Redirige a la lista de categorías o una página adecuada
+            header('Location: index.php'); // Redirige a la lista de categorías
         } else {
             echo "Error al actualizar la categoría: " . mysqli_error($con);
         }
@@ -39,11 +45,16 @@ else if ($opcion == 6) {
 // Eliminar categoría
 else if ($opcion == 7) {
     if (!empty($id_categoria)) {
+        // Verificación del id_categoria recibido
+        echo "Intentando eliminar la categoría con ID: $id_categoria <br>";
+
+        // Ejecutar la consulta para eliminar la categoría
         $consulta = "DELETE FROM categorias WHERE id_categoria=$id_categoria";
         $ejecutar = mysqli_query($con, $consulta);
 
         if ($ejecutar) {
-            header('Location: index.php'); // Redirige a la lista de categorías o una página adecuada
+            echo "Categoría eliminada correctamente.";
+            header('Location: index.php'); // Redirige a la lista de categorías
         } else {
             echo "Error al eliminar la categoría: " . mysqli_error($con);
         }
