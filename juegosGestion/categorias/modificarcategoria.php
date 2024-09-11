@@ -35,7 +35,7 @@ if (!$categoria) {
     <div class="container mt-4">
         <h1>Modificar Categoría</h1>
         <form action="controles.php" method="POST">
-            <input type="hidden" name="bandera" value="4">
+            <input type="hidden" name="bandera" value="6">
             <input type="hidden" name="id_categoria" value="<?php echo $categoria['id_categoria']; ?>">
 
             <div class="mb-3">

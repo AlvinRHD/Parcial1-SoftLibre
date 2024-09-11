@@ -41,7 +41,7 @@ $resultado = mysqli_query($con, $consulta);
     <!-- Barra de navegación -->
     <nav class="nav nav-pills flex-column flex-sm-row">
         <a class="flex-sm-fill text-sm-center nav-link active" href="#">Bienvenido <?php echo $_SESSION['usuario']; ?></a>
-        <a class="btn btn-danger flex-sm-fill text-sm-center" href="salir.php">Salir</a>
+        <a class="btn btn-danger flex-sm-fill text-sm-center" href="salir.php">Cerrar Sesión</a>
     </nav>
     <br><br>
 
@@ -86,7 +86,7 @@ $resultado = mysqli_query($con, $consulta);
                     echo "<td>" . ($juego['nombre_categoria'] ? $juego['nombre_categoria'] : 'Sin Categoría') . "</td>";
                     echo "<td>
                             <a href='modificarjuego.php?id=" . $juego['id_juego'] . "' class='btn btn-primary'>Modificar</a> 
-                            <a href='controles.php?id=" . $juego['id_juego'] . "&opcion=3' class='btn btn-danger'>Eliminar</a>
+                            <a href='controles.php?id=" . $juego['id_juego'] . "&opcion=6' class='btn btn-danger'>Eliminar</a>
                           </td>";
                     echo "</tr>";
                 }

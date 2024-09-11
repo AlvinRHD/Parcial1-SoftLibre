@@ -5,6 +5,7 @@ $opcion = isset($_POST['bandera']) ? $_POST['bandera'] : "";
 $nombre_categoria = isset($_POST['nombre_categoria']) ? $_POST['nombre_categoria'] : "";
 $id_categoria = isset($_POST['id_categoria']) ? $_POST['id_categoria'] : "";
 
+
 // Insertar nueva categoría
 if ($opcion == 5) {
     if (!empty($nombre_categoria)) {
