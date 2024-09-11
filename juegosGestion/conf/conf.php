@@ -3,7 +3,7 @@
 // Parámetros de conexión
 $server = "localhost";  // El servidor de la base de datos, por lo general 'localhost'
 $user = "root";         // Usuario de MySQL (ajustar si es diferente)
-$pass = "witty"; // Contraseña del usuario de MySQL (cámbialo por la que uses)
+$pass = ""; // Contraseña del usuario de MySQL (cámbialo por la que uses)
 $db = "gestion_juegos";  // Nombre de la base de datos
 
 // Crear la conexión
